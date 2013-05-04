@@ -6,7 +6,6 @@ It's a tiny tool I built because I wanted to be able to see exactly how I was ch
 
 ## Usage ##
 
-Pretty simple. 
+Pretty simple: `npm install git-watcher` to install, `watcher` to run.
 
-To install, just `sudo cp watcher.js /your/PATH/here/watcher`.
-To run, just `cd /dir/to/watch`, then `watcher`!
+Run `watcher` from your git repo (or any sub-directories), or from anywhere else with `watcher /path/to/repo`.
