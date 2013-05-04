@@ -20,7 +20,6 @@ function showLog() {
         "--no-color",
         "--graph",
         "--pretty=format:'%h -%d %s (%cr) <%an>'",
-        // "--pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'",
         "--abbrev-commit",
         "--branches"
       ].join(" ");
