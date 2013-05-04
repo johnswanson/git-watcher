@@ -9,8 +9,6 @@ var LOG_CACHE = "";
 var watchPath = process.argv[2] || process.cwd();
 watchPath = path.join(watchPath, ".git");
 
-process.stdout.on("resize", showLog);
-
 fs.watch(watchPath, function () {
   getLog(showLog);
 });
