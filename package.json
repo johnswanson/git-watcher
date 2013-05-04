@@ -1,0 +1,21 @@
+{
+  "name": "git-watcher",
+  "version": "0.0.2",
+  "description": "Prints a pretty ASCII git log visualization that updates in realtime",
+  "main": "watcher.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/johnswanson/git-watcher.git"
+  },
+  "keywords": [
+    "git",
+    "git-log"
+  ],
+  "bin": {
+    "watcher": "./watcher.js"
+  },
+  "author": "John Swanson",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "3f33de0d81d551eed71b5a004277fe4815df5a47"
+}
