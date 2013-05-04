@@ -6,8 +6,7 @@ var path = require("path");
 
 var LOG_CACHE = "";
 
-var watchPath = process.argv[2] || process.cwd();
-watchPath = path.join(watchPath, ".git");
+var watchPath = getPath(process.argv[2] || process.cwd());
 
 fs.watch(watchPath, function () {
   getLog(showLog);
@@ -17,6 +16,16 @@ process.stdout.on("resize", function () {
   if (LOG_CACHE !== "") showLog(null, LOG_CACHE);
   else getLog(showLog);
 });
+
+getLog(showLog);
+
+function getPath(dir) {
+  if (dir === "/") throw new Error("ERROR: The specified directory is not a git repository!");
+  if (path.basename(dir) === ".git") return path;
+  if (fs.existsSync(path.join(dir, ".git"))) return path.join(dir, ".git");
+
+  return getPath(path.dirname(dir));
+}
 
 function showLog(err, log) {
   if (err !== null) return;
