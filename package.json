@@ -1,6 +1,6 @@
 {
   "name": "git-watcher",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Prints a pretty ASCII git log visualization that updates in realtime",
   "main": "watcher.js",
   "repository": {
