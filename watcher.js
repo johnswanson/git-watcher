@@ -6,7 +6,13 @@ var path = require("path");
 
 var LOG_CACHE = "";
 
-var watchPath = getPath(process.argv[2] || process.cwd());
+try {
+  var watchPath = getPath(process.argv[2] || process.cwd());
+} catch (err) {
+  console.log("Error: not a git repo!");
+  console.log("Try calling watcher from a git repository (or one's child).");
+  process.exit(1);
+}
 
 fs.watch(watchPath, function () {
   getLog(showLog);
